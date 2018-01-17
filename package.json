@@ -1,38 +1,125 @@
 {
-  "name": "practice-jan",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --hot"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SandeepTechindustan/practice-jan.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SandeepTechindustan/practice-jan/issues"
-  },
-  "homepage": "https://github.com/SandeepTechindustan/practice-jan#readme",
+  "name": "rrr-basic-example",
+  "version": "0.0.0",
+  "repository": "reactjs/react-router-redux",
+  "license": "MIT",
   "dependencies": {
-    "css-loader": "^0.28.8",
-    "less-loader": "^4.0.5",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "style-loader": "^0.19.1",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.0"
+    "axios": "^0.16.1",
+    "bootstrap": "^3.3.7",
+    "classnames": "^2.2.5",
+    "crypto": "0.0.3",
+    "elemental": "^0.6.1",
+    "file-loader": "^0.11.0",
+    "font-awesome": "^4.7.0",
+    "fullcalendar": "^3.6.1",
+    "is_js": "^0.9.0",
+    "jquery": "^3.2.1",
+    "md5": "^2.2.1",
+    "moment": "^2.20.1",
+    "npm5": "^5.0.0-beta.69",
+    "query-string": "^5.0.0",
+    "react": "^15.6.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-addons-shallow-compare": "^15.5.2",
+    "react-bootstrap": "^0.31.1",
+    "react-bootstrap-counter": "^1.0.1",
+    "react-bootstrap-date-picker": "^5.1.0",
+    "react-bootstrap-datetimepicker": "0.0.22",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-dom": "^15.4.2",
+    "react-dropzone": "^3.13.4",
+    "react-facebook-login": "^3.6.2",
+    "react-google-autocomplete": "^1.0.15",
+    "react-google-login": "^2.9.3",
+    "react-loader-advanced": "^1.7.1",
+    "react-notification-system": "^0.2.15",
+    "react-places-autocomplete": "^5.4.3",
+    "react-redux": "^4.3.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.0",
+    "react-slick": "^0.16.0",
+    "react-stars": "^2.2.5",
+    "react-tagsinput": "^3.19.0",
+    "redux": "^3.2.1",
+    "redux-form": "^7.0.4",
+    "redux-thunk": "^2.2.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^5.0.0-beta9",
+    "babel-loader": "^6.4.1",
     "babel-plugin-transform-decorators": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1"
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-1": "^6.3.13",
+    "better-npm-run": "0.0.15",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.27.3",
+    "eslint": "^1.10.3",
+    "eslint-config-rackt": "^1.1.1",
+    "eslint-plugin-react": "^3.16.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.2",
+    "node-sass": "^4.5.2",
+    "redux-devtools": "^3.1.0",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.4",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.16.0",
+    "uglify-js-brunch": "^2.10.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1"
+  },
+  "scripts": {
+    "start": "better-npm-run run:dev",
+    "run:dev": "better-npm-run run:dev",
+    "run:stage": "better-npm-run run:stage",
+    "build:stage": "better-npm-run build:stage",
+    "build:prod": "better-npm-run build:prod"
+  },
+  "betterScripts": {
+    "run:dev": {
+      "command": "set NODE_ENV=development && webpack-dev-server --config webpack.config.js",
+      "env": {
+        "NODE_ENV": "development",
+        "HOST": "http://localhost",
+        "API_URL": "http://localhost",
+        "PORT": 8081
+      }
+    },
+    "run:stage": {
+      "command": "webpack-dev-server --config webpack.config.js",
+      "env": {
+        "NODE_ENV": "staging",
+        "HOST": "https://localhost",
+        "API_URL": "http://localhost",
+        "PORT": 8081
+      }
+    },
+    "build:stage": {
+      "command": "webpack --config webpack.dev.prod.config.js --progress --colors",
+      "env": {
+        "NODE_ENV": "staging",
+        "HOST": "http://localhost",
+        "API_URL": "http://localhost",
+        "PORT": 80
+      }
+    },
+    "build:prod": {
+      "command": "set NODE_ENV=production && webpack -p",
+      "env": {
+        "NODE_ENV": "production",
+        "HOST": "http://gign.devskart.com",
+        "API_URL": "http://localhost",
+        "PORT": 80
+      }
+    }
   }
 }

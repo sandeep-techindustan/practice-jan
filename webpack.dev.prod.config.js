@@ -1,11 +1,12 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 var host = process.env.PORT == 80 ? process.env.HOST : (process.env.HOST + ':' + process.env.PORT);
 var apiUrl = process.env.API_URL;
 
 module.exports = {
-  entry: './src/devApp.js',
+  entry: './src/app.js',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -17,10 +18,11 @@ module.exports = {
         loader: 'babel-loader',
         include: __dirname
       }, {
-        test: /\.(scss|css)$/,
-        loaders: [
-          "style-loader", "css-loader", "sass-loader"
-        ]
+        test: /\.(sass|css)$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [ 'css-loader', 'sass-loader']
+        })
       }, {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/,
         loader: 'url-loader'
@@ -33,8 +35,7 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-        { from: 'index.html', to: 'index.html' },
-        { from: 'src/assets/images', to: 'src/assets/images/' }
+        { from: 'src/assets/images', to: 'images' }
     ], {
         copyUnmodified: true
     }),
@@ -49,9 +50,9 @@ module.exports = {
     })
   },
   devServer: {
-    contentBase: path.join(__dirname),
+    contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     open: true,
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 8080
   }
 }
