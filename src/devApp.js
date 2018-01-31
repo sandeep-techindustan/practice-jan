@@ -16,7 +16,6 @@ import './init';
 import store from './store';
 import { RoutesComponent } from './components';
 import './assets/scss/main.scss';
-import {mountNode} from './constants';
 import {App} from './containers';
 
 //const history = syncHistoryWithStore(browserHistory, store);
@@ -29,5 +28,5 @@ ReactDOM.render(
     	<App />
     </Router>
   </Provider>,
-  document.getElementById(mountNode)
+  document.getElementById('root')
 )

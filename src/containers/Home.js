@@ -1,9 +1,6 @@
-//File Name: Home.js
-//Path: src/containers/
-//Description: This file is used as a container for gig'n home page.
 import React, { Component } from 'react';
 import {
-	Row, 
+	Row,
 	Col,
 	Grid,
 	Button,
@@ -19,9 +16,11 @@ export default class Home extends Component {
 	render() {
 		console.log("hello");
 		return(
-			<Col className="">
-				Home
-			</Col>
+			<Grid>
+				<Row style={{margin: 200, height: '30vh'}}>
+					<Col xs={12} sm={12} md={12} className="text-center"><h1>Home / Body</h1><p>This page will be changed during routing but the header and footer won't change.</p></Col>
+				</Row>
+			</Grid>
 		);
 	}
 }

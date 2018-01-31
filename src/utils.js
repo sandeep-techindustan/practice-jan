@@ -164,8 +164,8 @@ export function apiPut (endPoint, data, headers = {}) {
 //Parameters: data
 //Description: This function is used to send data in multipart form.
 export function multiPartData(data) {
-	
-	let multiPart = new FormData();	
+
+	let multiPart = new FormData();
 
 	for (let prop in data) {
 		multiPart.append(prop, data[prop]);

@@ -11,12 +11,13 @@ import {connect} from 'react-redux';
 export default class Footer extends Component {
 	render () {
 		const { pathname } = this.props.location;
-		
+
 		return (
-			<footer>
-				footer
-			</footer>
-			
+			<Grid>
+				<Row>
+					<Col xs={12} sm={12} md={12} className="text-center"><p>Footer</p></Col>
+				</Row>
+			</Grid>
 		)
 	}
 }

@@ -91,7 +91,7 @@
         "NODE_ENV": "development",
         "HOST": "http://localhost",
         "API_URL": "http://localhost",
-        "PORT": 8081
+        "PORT": 4000
       }
     },
     "run:stage": {
@@ -100,7 +100,7 @@
         "NODE_ENV": "staging",
         "HOST": "https://localhost",
         "API_URL": "http://localhost",
-        "PORT": 8081
+        "PORT": 4000
       }
     },
     "build:stage": {
