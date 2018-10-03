@@ -21,7 +21,7 @@
     "react": "^15.6.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-shallow-compare": "^15.5.2",
-    "react-bootstrap": "^0.31.1",
+    "react-bootstrap": "4.1.2",
     "react-bootstrap-counter": "^1.0.1",
     "react-bootstrap-date-picker": "^5.1.0",
     "react-bootstrap-datetimepicker": "0.0.22",
